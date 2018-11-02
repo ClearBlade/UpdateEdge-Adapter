@@ -1,0 +1,16 @@
+[Unit]
+Description=ClearBlade Adapter used to upgrade ClearBlade Edge
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+ExecStart=/usr/local/bin/updateEdgeAdapter -password=01234567890 -deviceName=updateEdgeAdapter \
+-systemKey=<YOUR_SYSTEM_KEY> -systemSecret=<YOUR_SYSTEM_SECRET> \
+-platformURL=<> -messagingURL=<> \
+-logLevel=debug -edgeInstallDir=/usr/bin/clearblade
+
+[Install]
+WantedBy=multi-user.target

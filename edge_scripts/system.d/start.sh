@@ -1,5 +1,5 @@
 #Stop the adapter first
-monit stop updateEdgeAdapter
+systemctl stop updateEdgeAdapter.service
 
 #Start the adapter
-monit start updateEdgeAdapter
+systemctl start updateEdgeAdapter.service

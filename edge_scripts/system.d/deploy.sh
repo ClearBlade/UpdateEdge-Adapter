@@ -7,10 +7,10 @@ cp updateEdgeAdapter /usr/bin
 chmod +x /usr/bin/updateEdgeAdapter
 
 #Set up system.d resources so that updateEdgeAdapter is started when the gateway starts
-cp updateEdgeAdapter.service /etc/systemd/system/updateEdgeAdapter.service
+cp updateEdgeAdapter_service /lib/systemd/system/updateEdgeAdapter.service
 
 #Ensure system.d script is executable
-chmod +x /etc/systemd/system/updateEdgeAdapter.service
+chmod +x /lib/systemd/system/updateEdgeAdapter.service
 
 #Enable the adapter in system.d
 systemctl enable updateEdgeAdapter.service

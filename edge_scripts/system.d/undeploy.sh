@@ -1,17 +1,18 @@
 #!/bin/bash
 
-#Remove updateEdgeAdapter from monit
-sed -i '/updateEdgeAdapter.pid/{N;N;N;N;d}' /etc/monitrc
+#Stop the updateEdgeAdapter service in system.d
+systemctl stop updateEdgeAdapter.service
 
-#Remove the init.d script
-rm /etc/init.d/updateEdgeAdapter
+#Disable the updateEdgeAdapter service in system.d
+systemctl disable updateEdgeAdapter.service
 
-#Remove the default variables file
-rm /etc/default/updateEdgeAdapter
+#Remove the service file
+rm /lib/systemd/system/updateEdgeAdapter.service
 
 #Remove the binary
 rm /usr/bin/updateEdgeAdapter
 
-#restart monit
-/etc/init.d/monit restart
+#reload the daemon
+systemctl daemon-reload
+systemctl reset-failed
 
