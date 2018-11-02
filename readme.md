@@ -17,14 +17,15 @@ The JSON payloads expected by and returned from the __updateEdgeAdapter__ adapte
 
 #### Upgrade Edge request
 
-The json request should be structured as follows:	
+The json request should be structured as follows:
+
 {
   "version": "4.2.3"
 }
 
 #### Upgrade Edge response
 
-	The json response will resemble the following:
+The json response will resemble the following:
 	
 {
   “success”: true|false,
@@ -34,7 +35,7 @@ The json request should be structured as follows:
 
 #### Upgrade Edge status logs
 
-	The json response will resemble the following:
+The json response will resemble the following:
 	
 {
   "logs": [

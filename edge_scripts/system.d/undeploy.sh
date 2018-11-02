@@ -15,4 +15,3 @@ rm /usr/bin/updateEdgeAdapter
 #reload the daemon
 systemctl daemon-reload
 systemctl reset-failed
-
